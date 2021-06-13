@@ -4,15 +4,35 @@
 
 
 
-commit备注规范
+- #### type: commit 的类型
 
-- chore: 构建过程或辅助工具的变动
-- docs: 文档（documentation）
-- feat: 新功能（feature）
-- fix: 修补bug
-- refactor: 重构（即不是新增功能，也不是修改bug的代码变动）
-- style: 格式（不影响代码运行的变动）
-- test: 增加测试
+  - init: 初始化
+
+  - feat: 新特性
+
+  - fix: 修改问题
+
+  - refactor: 代码重构
+
+  - docs: 文档修改
+
+  - style: 代码格式修改, 注意不是 css 修改
+
+  - test: 测试用例修改
+
+  - build: 构建项目
+
+  - chore: 其他修改, 比如依赖管理
+
+  - scope: commit 影响的范围, 比如: route, component, utils, build...
+
+  - subject: commit 的概述
+
+    
+
+  body: commit 具体修改内容, 可以分为多行.
+
+  footer: 一些备注, 通常是 BREAKING CHANGE 或修复的 bug 的链接.
 
 
 
