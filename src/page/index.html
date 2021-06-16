@@ -5,11 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>登录页面</title>
 </head>
 
-<body>
-    <header>源码健身</header>
+<body class="dpflex flexcol">
+    <main class=" fcf flexcol flex1 indexMani">
+        <div class="header">
+            <h1 class="h1">手机号登录/注册</h1>
+            <p class="textP">快速找到好友, 一站式记录你的运动</p>
+            <div class="pawLog">密码登录</div>
+        </div>
+        <div>
+            <ul class="fs16 mt40">
+                <li>
+                    <input class="inp_1 telInp bru ti2 " type="text" placeholder="+86▼输入手机号码">
+                </li>
+                <li class="dpflex">
+                    <input class="inp_2 bru ti2 yzmInp" type="text" placeholder="请输入验证码">
+                    <canvas width="123" height="50" id="captcha" class="veri"></canvas>
+                </li>
+                <li>
+                    <input class="inp_1 pawInp bru ti2" type="text" placeholder="请输入密码">
+                </li>
+                <li>
+                    <input class="inp_1 conInp bru ti2" type="text" placeholder="请再次确认密码">
+                </li>
+            </ul>
+            <div class="btn bru fcf ">注册账号</div>
+            <div class="weChat">微信注册</div>
+            <p class="promptText mt20"></p>
+        </div>
+    </main>
+    <h6 class="fcf">- HOLD ON -</h6>
+
+
+
 </body>
 
 </html>

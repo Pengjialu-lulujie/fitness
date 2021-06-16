@@ -1,0 +1,131 @@
+/*
+ * 可复用的公有布局
+ */
+
+/* main */
+.indexMani {
+    background: url(../../img/sign-bg.jpg) no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.header {
+    position: relative;
+    top: 30px;
+    width: 100%;
+    height: 100px;
+}
+
+.h1 {
+    width: 100%;
+    height: 40px;
+    font-size: 28px;
+}
+
+.textP {
+    width: 100%;
+    height: 22px;
+    font-size: 16px;
+}
+
+.pawLog {
+    position: absolute;
+    left: 277px;
+    top: -18px;
+    width: 80px;
+    height: 28px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.pawDl {
+    font-size: 30px;
+}
+
+li {
+    margin: 5% 0;
+    width: 100%;
+    height: 52px;
+}
+
+.inp_1 {
+    width: 90%;
+    margin: 0 5%;
+    height: 50px;
+    background: rgba(255, 255, 255, .7);
+}
+
+.inp_2 {
+    margin: 0 5%;
+    width: 46%;
+    height: 50px;
+    background: rgba(255, 255, 255, .7);
+}
+
+.veri {
+    margin-left: 15px;
+    width: 123px;
+    height: 50px;
+    background-color: aqua;
+}
+
+.btn {
+    margin: 0 5%;
+    width: 90%;
+    height: 50px;
+    background-color: rgba(99, 255, 167, .6);
+    text-align: center;
+    line-height: 50px;
+}
+
+.weChat {
+    margin-left: 273px;
+    margin-top: 27px;
+}
+
+h6 {
+    position: absolute;
+    width: 100%;
+    bottom: 60px;
+    text-align: center;
+}
+
+/*toast 样式*/
+.toast {
+    position: absolute;
+    top: calc(50% - 75px);
+    left: calc(50% - 75px);
+    padding: 15px;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 0, 0, .7);
+    border-radius: 5px;
+    color: #fff;
+
+    .icon {
+        width: 100%;
+        height: 80px;
+        text-align: center;
+        line-height: 100px;
+        font-size: 40px;
+    }
+
+    .toast-text {
+        width: 100%;
+        height: 40px;
+        line-height: 20px;
+        text-align: center;
+        /*文本可支持换行数*/
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+}
+
+// 页脚样式
+.footer {
+    margin-top: 20px;
+    justify-content: space-around;
+}

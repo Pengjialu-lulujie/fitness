@@ -1,5 +1,5 @@
 /**webpack 打包配置文件
- * author:cometang 2021-06-12
+ * author:Alice 2021-06-12
  */
 //导入 nodejs 内直模块  获取项目根目录绝对路径
 const path = require('path');
@@ -10,15 +10,32 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 //每次打包-自动清除 dist 目录
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const {
+    CleanWebpackPlugin
+} = require('clean-webpack-plugin');
 
 module.exports = {
     //五大概念导出
 
     //入口
     entry: {
-        home: './src/js/index.js',
-        login: './src/js/login.js'
+        //公共css
+        commonCSS: './src/js/commonCSS.js',
+        dom: './src/js/common-js/dom.js',
+        http: './src/js/common-js/http.js',
+        utils: './src/js/common-js/utils.js',
+        //三方插件
+        captcha: './src/lib/captcha/captcha-mini.js',
+
+
+        //多页面应用 home模块
+        home: './src/js/home.js',
+        login: './src/js/login.js',
+        index: './src/js/index.js',
+        homePage: './src/js/homePage.js',
+        train: './src/js/train.js',
+        userInfo: './src/js/userInfo.js'
+
     },
 
     //出口
@@ -90,20 +107,51 @@ module.exports = {
 
     //plugins 插件
     plugins: [
-        //index.html
+        //home.html
         new HtmlWebpackPlugin({
             //以哪个页面作为打包的页面模板--打包哪个页面
-            template: './src/page/index.html',
-            filename: 'index.html',
-            chunks: ['index']
+            template: './src/page/home.html',
+            filename: 'home.html',
+            chunks: ['home', 'commonCSS', 'dom']
         }),
         //login.html
         new HtmlWebpackPlugin({
             //以哪个页面作为打包的页面模板--打包哪个页面
             template: './src/page/login.html',
             filename: 'login.html',
-            chunks: ['login']
+            chunks: ['login', 'commonCSS', 'dom', 'utils', 'http']
         }),
+        //index.html
+        new HtmlWebpackPlugin({
+            //以哪个页面作为打包的页面模板--打包哪个页面
+            template: './src/page/index.html',
+            filename: 'index.html',
+            chunks: ['index', 'commonCSS', 'dom', 'http', 'captcha', 'utils']
+        }),
+        //homePage.html
+        new HtmlWebpackPlugin({
+            //以哪个页面作为打包的页面模板--打包哪个页面
+            template: './src/page/homePage.html',
+            filename: 'homePage.html',
+            chunks: ['homePage', 'commonCSS', 'dom']
+        }),
+        //train.html
+        new HtmlWebpackPlugin({
+            //以哪个页面作为打包的页面模板--打包哪个页面
+            template: './src/page/train.html',
+            filename: 'train.html',
+            chunks: ['train', 'commonCSS', 'dom']
+        }),
+        //userInfo.html
+        new HtmlWebpackPlugin({
+            //以哪个页面作为打包的页面模板--打包哪个页面
+            template: './src/page/userInfo.html',
+            filename: 'userInfo.html',
+            chunks: ['userInfo', 'commonCSS', 'dom']
+        }),
+
+
+
         new MiniCssExtractPlugin({
             filename: 'css/[name].css' // 输出到css文件夹里
         }),
@@ -126,7 +174,7 @@ module.exports = {
         port: 8081, // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'index.html', // 打开的页面
+        openPage: 'home.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
 

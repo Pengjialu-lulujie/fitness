@@ -1,0 +1,180 @@
+/*
+ * 面向属性的 CSS
+ */
+
+/* 布局方式 */
+.dpflex {
+    display: flex;
+}
+
+.flexcol {
+    flex-direction: column;
+}
+
+.flexrow {
+    flex-direction: row;
+}
+
+.justcc {
+    justify-content: center;
+}
+
+.flexsa {
+    justify-content: space-around;
+}
+
+.jcsa {
+    justify-content: space-around;
+}
+
+.dpnone {
+    display: none;
+}
+
+.ovsc {
+    overflow-y: scroll;
+}
+
+.flex1 {
+    flex: 1
+}
+
+.flex2 {
+    flex: 2
+}
+
+.flex3 {
+    flex: 3
+}
+
+/* 盒模型 */
+.mt10 {
+    margin-top: 10;
+}
+
+.mt8 {
+    margin-top: 8px;
+}
+
+.mt16 {
+    margin-top: 16px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
+
+.mr16 {
+    margin-right: 16px;
+}
+
+.mb16 {
+    margin-bottom: 16px;
+}
+
+.ml12 {
+    margin-left: 12px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.ml25 {
+    margin-left: 25px;
+}
+
+.pd16 {
+    padding: 16px;
+}
+
+.pdt25 {
+    padding-top: 25px;
+}
+
+.pdb20 {
+    padding-bottom: 20px;
+}
+
+.pl8 {
+    padding-left: 8px;
+}
+
+/* 字号 */
+.fs12 {
+    font-size: 12px;
+}
+
+.fs16 {
+    font-size: 16px;
+}
+
+.fs18 {
+    font-size: 18px;
+}
+
+.fs20 {
+    font-size: 20px;
+}
+
+.fs22 {
+    font-size: 22px;
+}
+
+.fs40 {
+    font-size: 40px;
+}
+
+/* 字体样式居中 */
+.tac {
+    text-align: center;
+}
+
+/* 字体颜色 */
+.fc9A {
+    color: #9A9A9A;
+}
+
+.fcf {
+    color: #fff;
+}
+
+.fc8A {
+    color: #8A8A8A;
+}
+
+.fc429 {
+    color: #4294FF;
+}
+
+/* 圆角 */
+.bru {
+    border-radius: 25px;
+}
+
+.bru15 {
+    border-radius: 15px;
+}
+
+
+
+.ti2 {
+    text-indent: 2em;
+}
+
+/* 透明度 */
+.bop {
+    opacity: 0.5;
+}
+
+.bg232 {
+    background-color: rgba(232, 232, 232, 100);
+}
+
+.bgf {
+    background: #fff;
+}
