@@ -1,1 +1,1 @@
-require('../css/train.less')
+require('../css/train.less');

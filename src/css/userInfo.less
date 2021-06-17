@@ -43,3 +43,53 @@
     height: 50px;
     line-height: 50px;
 }
+
+body {
+    position: relative;
+}
+
+#mc {
+    width: 100%;
+    height: 100%;
+    background: rgba(rgba(126, 24, 24, 0.2));
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+
+    #mcBox {
+        margin-top: calc(50% + 75px);
+        margin-left: calc(50% - 100px);
+        width: 200px;
+        height: 150px;
+        background: rgba(104, 99, 99, 0.7);
+        border-radius: 25px;
+        padding-top: 15px !important;
+
+        #signOut {
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            font-size: 20px;
+
+        }
+
+        .popPup {
+            width: 100%;
+            height: 60px;
+            text-align: center;
+
+            span {
+                display: inline-block;
+                width: 80px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                background: #4294ff;
+                border-radius: 20px;
+                color: #fff;
+            }
+        }
+    }
+}

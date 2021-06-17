@@ -21,11 +21,16 @@ module.exports = {
     entry: {
         //公共css
         commonCSS: './src/js/commonCSS.js',
+        //预加载
         dom: './src/js/common-js/dom.js',
+        //ajax
         http: './src/js/common-js/http.js',
+        //toast 工具函数 
         utils: './src/js/common-js/utils.js',
-        //三方插件
+        //三方插件  验证码
         captcha: './src/lib/captcha/captcha-mini.js',
+        //swiper 轮播图
+        Swiper: './src/lib/swiper/swiper-bundle.js',
 
 
         //多页面应用 home模块
@@ -34,7 +39,9 @@ module.exports = {
         index: './src/js/index.js',
         homePage: './src/js/homePage.js',
         train: './src/js/train.js',
-        userInfo: './src/js/userInfo.js'
+        userInfo: './src/js/userInfo.js',
+        sports: './src/js/sports.js',
+        information: './src/js/information.js',
 
     },
 
@@ -133,7 +140,7 @@ module.exports = {
             //以哪个页面作为打包的页面模板--打包哪个页面
             template: './src/page/homePage.html',
             filename: 'homePage.html',
-            chunks: ['homePage', 'commonCSS', 'dom']
+            chunks: ['homePage', 'commonCSS', 'dom', 'http', 'utils', 'Swiper']
         }),
         //train.html
         new HtmlWebpackPlugin({
@@ -147,7 +154,21 @@ module.exports = {
             //以哪个页面作为打包的页面模板--打包哪个页面
             template: './src/page/userInfo.html',
             filename: 'userInfo.html',
-            chunks: ['userInfo', 'commonCSS', 'dom']
+            chunks: ['userInfo', 'commonCSS', 'dom', 'http', 'utils']
+        }),
+        //sports.html
+        new HtmlWebpackPlugin({
+            //以哪个页面作为打包的页面模板--打包哪个页面
+            template: './src/page/sports.html',
+            filename: 'sports.html',
+            chunks: ['sports', 'commonCSS', 'dom', 'http', 'utils']
+        }),
+        //information.html
+        new HtmlWebpackPlugin({
+            //以哪个页面作为打包的页面模板--打包哪个页面
+            template: './src/page/information.html',
+            filename: 'information.html',
+            chunks: ['information', 'commonCSS', 'dom', 'http', 'utils']
         }),
 
 
@@ -174,7 +195,7 @@ module.exports = {
         port: 8081, // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'home.html', // 打开的页面
+        openPage: 'userInfo.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
 

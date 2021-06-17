@@ -2,7 +2,7 @@
  * 对 ajax 请求的封装
  */
 
-const BASE_URL = 'http://139.159.146.104:8088'; // 接口请求的 URL
+const BASE_URL = 'http://139.9.177.51:8099'; // 接口请求的 URL
 
 /**
  * 参数处理函数
@@ -42,7 +42,7 @@ const $http = {
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         let response = JSON.parse(xhr.responseText) // 数据直接处理成对象 方便渲染
-        success(response)  // 传入回调
+        success(response) // 传入回调
       }
     }
 
@@ -58,7 +58,7 @@ const $http = {
   // 简洁版的 get 封装
   get: function (url, callback) {
     this.ajax({
-      url: url, 
+      url: url,
       method: 'get',
       success: callback,
     })
@@ -66,7 +66,7 @@ const $http = {
   // 简洁版的 post 封装
   post: function (url, params, callback) {
     this.ajax({
-      url: url, 
+      url: url,
       method: 'post',
       data: params,
       success: callback,
@@ -82,7 +82,7 @@ function $updateFile(url, fdKey, fdValue, success) {
   fd.append(fdKey, fdValue);
 
   xhr.open('POST', url);
-  xhr.onreadystatechange = function() {
+  xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       const resData = JSON.parse(xhr.responseText)
       success(resData)

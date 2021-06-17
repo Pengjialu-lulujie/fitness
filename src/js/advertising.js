@@ -1,1 +1,1 @@
-require('../css/common/advertising.css')
+require('../css/common/advertising.css');

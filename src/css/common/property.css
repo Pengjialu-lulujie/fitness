@@ -27,6 +27,10 @@
     justify-content: space-around;
 }
 
+.justsb {
+    justify-content: space-between;
+}
+
 .dpnone {
     display: none;
 }
@@ -129,6 +133,10 @@
     font-size: 40px;
 }
 
+.fs80 {
+    font-size: 80px;
+}
+
 /* 字体样式居中 */
 .tac {
     text-align: center;
@@ -149,6 +157,10 @@
 
 .fc429 {
     color: #4294FF;
+}
+
+.fc005 {
+    color: #005177;
 }
 
 /* 圆角 */

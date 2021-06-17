@@ -5,36 +5,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>首页</title>
 </head>
 
-<body>
-    <header class="header">
-        轮播图
+<body class="dpflex flexcol">
+    <header class="homeHeader">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <img class="swiper-slide" src="../img/course-img01.jpg" alt="">
+                <img class="swiper-slide" src="../img/course-img02.png" alt="">
+                <img class="swiper-slide" src="../img/course-img03.jpg" alt="">
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
     </header>
-    <main class="dpflex main">
+    <main class="dpflex main flex1" style="overflow: scroll">
         <div class="outBox dpflex">
             <div class="icon_1">
-                <p class="ranking">今日排名</p>
+                <div class="ranking">
+                    今日排名:<span id="rank" class="text"></span>
+                </div>
             </div>
-            <p class="text">9</p>
+            <!-- <p class="text">9</p> -->
             <div class="icon_2">
-                <p class="clock">累积打卡23天</p>
+                <div class="clock">
+                    累积打卡天数：<span id="punchIn"></span>
+                </div>
             </div>
             <p class="dayClock">今日打卡</p>
         </div>
-        <div class="dpflex data">
-            <div class="icon_3"></div>
-            <div class="icon_4"></div>
+        <div class="dpflex data mt20">
+            <div class="icon_3">
+                <p class="sportData fcf fs16">运动数据</p>
+            </div>
+            <div class="icon_4">
+                <div class=" iconfont iconbadge icon">
+                </div>
+                <div class="fs16 fc005 dataText">
+                    累积运动徽章:<span id="insigniaNum"></span>
+                </div>
+                <p class="num fc005 fs80">3</p><span class="company">枚</span>
+            </div>
         </div>
-        <div class="curriculum"></div>
-        <div class="outdoors"></div>
+        <div class="curriculum mt20"></div>
+        <div class="outdoors mt20"></div>
     </main>
-    <footer class="footer dpflex">
-        <p>首页</p>
-        <p>运动</p>
-        <p>我的</p>
-    </footer>
+    <!-- <footer class="footer dpflex mt20">
+        <div class="active nav">
+            <div><i class="iconfont iconhome"></i></div>
+            <p>首页</p>
+        </div>
+
+        <div class="active nav">
+            <div><i class="iconfont iconsports"></i></div>
+            <p>运动</p>
+        </div>
+        <div class="active nav">
+            <div><i class="iconfont iconmine"></i></div>
+            <p>我的</p>
+        </div>
+    </footer> -->
 </body>
 
 </html>

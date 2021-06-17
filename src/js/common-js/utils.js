@@ -8,9 +8,42 @@
  * @status number  0:失败 1：成功
  * @text   string  提示信息
  * @timer   Number  S
+ * @page string 传输的页面
  */
 const utils = {
-    toast: function (status, timer, text) {
+    //页脚
+    addFooter: function (page) {
+        let footer = document.createElement('div');
+        let body = document.querySelector('body');
+        footer.className = 'footer dpflex mt20'
+        let html = `
+        <a href='./homePage.html'>
+        <div class='${page==='homePage'?'active nav':'nav'}'>
+        <div><i class="iconfont iconhome"></i></div>
+        <p>首页</p>
+       </div>
+        </a>
+        <a href='./sports.html'>
+        <div class='${page==='sports'?'active nav':'nav'}'>
+        <div><i class="iconfont iconsports"></i></div>
+        <p>运动</p>
+       </div>       
+        </a>
+
+        <a href='./userInfo.html'>
+        <div class='${page==='userInfo'?'active nav':'nav'}'>
+        <div><i class="iconfont iconmine"></i></div>
+        <p>我的</p>
+       </div>
+       </a>
+      
+        `
+        footer.innerHTML = html;
+        body.appendChild(footer)
+    },
+
+
+    toast: function (status, text, timer = 1) {
         let toast = document.createElement('div')
         toast.className = 'toast'
         let html = `

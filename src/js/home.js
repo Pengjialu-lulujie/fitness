@@ -18,7 +18,7 @@ document.ready(function () {
             let num = parseInt(timeNum.textContent) - 1
             timeNum.textContent = num
         }
-    }, 100000)
+    }, 1000)
     timeBtn.addEventListener('click', function () {
         location.href = './index.html'
     })
