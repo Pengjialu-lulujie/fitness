@@ -23,8 +23,8 @@ const utils = {
         <p>首页</p>
        </div>
         </a>
-        <a href='./sports.html'>
-        <div class='${page==='sports'?'active nav':'nav'}'>
+        <a href='./train.html'>
+        <div class='${page==='train'?'active nav':'nav'}'>
         <div><i class="iconfont iconsports"></i></div>
         <p>运动</p>
        </div>       
@@ -47,7 +47,7 @@ const utils = {
         let toast = document.createElement('div')
         toast.className = 'toast'
         let html = `
-         <div class=" icon" >
+         <div class="icon" >
                ${status === 0 ? '!' : '√'}
         </div>
         <div class="toast-text">

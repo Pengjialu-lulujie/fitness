@@ -9,15 +9,42 @@
 </head>
 
 <body class="dpflex flexcol">
-    <header class="mt40 ml20">
-        <div class="headPortrait "></div>
-        <span class="user fs22">用户名</span>
-        <p class="fc8A fs16 pdb20">个性签名: XXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+    <header class="mt40 ml20 headerIcon">
+        <div class="headPortrait">
+            <img src="../img/dog.jpg" alt="" class="imgBox">
+        </div>
+        <span class="user fs22 uesrName"></span>
+        <p class="fc8A fs16 pdb20">个性签名：<span class="fc8A fs16 autograph">xxxx</span></p>
+
+        </p>
     </header>
-    <main class="flex1 bg232">
+    <main class="flex1 bg232 ovsc">
         <div class="sports bgf mt20 pd16">
             <div class="dpflex">
-                <div class="icon"></div>
+                <div class="header-icon iconfont iconchart"></div>
+                <span>运动数据</span>
+                <div class="arrow">></div>
+            </div>
+            <div class="data dpflex mt20">
+                <div class="sumData flex1">
+                    <p class="mb16">总运动</p>
+                    <div class="fc429 fs40">
+                        <span id="sportsData">99999</span>
+                        <span class="fs12 fc8A">分钟</span>
+                    </div>
+                </div>
+                <div class="consume flex1">
+                    <p class="mb16">本周消耗</p>
+                    <div class="fc429 fs40">
+                        <span id="consumeData">99999</span>
+                        <span class="fs12 fc8A">千卡</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sports bgf mt20 pd16">
+            <div class="dpflex">
+                <div class="icon1 iconfont iconbadge"></div>
                 <span>运动数据</span>
                 <div class="arrow">></div>
             </div>
@@ -32,24 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="sports bgf mt20 pd16">
-            <div class="dpflex">
-                <div class="icon"></div>
-                <span>运动数据</span>
-                <div class="arrow">></div>
-            </div>
-            <div class="data dpflex mt20">
-                <div class="sumData flex1">
-                    <p class="mb16">总运动</p>
-                    <div class="fc429 fs40">99999<span class="fs12 fc8A">分钟</span></div>
-                </div>
-                <div class="consume flex1">
-                    <p class="mb16">本周消耗</p>
-                    <div class="fc429 fs40">99999<span class="fs12 fc8A">千卡</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="logOut dpflex justcc bgf mt20">退出登录</div>
+        <div class="logOut mb16 justcc bgf mt20">退出登录</div>
     </main>
     <!-- 蒙层 -->
     <div id="mc">
@@ -61,6 +71,8 @@
             </div>
         </div>
     </div>
+
+    <input type="file" class="fileBtn">
 </body>
 
 </html>

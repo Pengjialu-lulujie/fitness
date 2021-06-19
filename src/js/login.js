@@ -1,16 +1,18 @@
 require('../css/login.less');
 
 document.ready(function () {
-    //点击账号注册实现页面跳转
-    let pawDl = document.querySelector('.pawDl')
-    pawDl.addEventListener('click', function (ev) {
-        location.href = './index.html'
-    })
     //获取dom
     let accountInp = document.querySelector('.accountInp');
     let pawInp = document.querySelector('.pawInp');
     let btn = document.querySelector('.btn');
+    let pawLogBtn = document.querySelector('.pawLog')
     console.log(btn);
+
+    //点击账号注册实现页面跳转
+    pawLogBtn.addEventListener('click', function (ev) {
+        location.href = './index.html'
+    })
+
 
     //事件监听
     btn.addEventListener('click', function () {
@@ -18,7 +20,7 @@ document.ready(function () {
             let data = {
                 account: accountInp.value,
                 password: pawInp.value
-                
+
             }
             $http.post('/users/login', data, function (res) {
                 console.log(res);

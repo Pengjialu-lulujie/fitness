@@ -31,17 +31,30 @@ module.exports = {
         captcha: './src/lib/captcha/captcha-mini.js',
         //swiper 轮播图
         Swiper: './src/lib/swiper/swiper-bundle.js',
+        //weui 
+        weui: './src/lib/weui/weui.js',
 
 
         //多页面应用 home模块
         home: './src/js/home.js',
+        //密码登录页面
         login: './src/js/login.js',
+        // 注册页面
         index: './src/js/index.js',
+        //首页
         homePage: './src/js/homePage.js',
+        //课程训练页面
         train: './src/js/train.js',
+        //我的页面
         userInfo: './src/js/userInfo.js',
+        //运动页面
         sports: './src/js/sports.js',
+        //个人信息修改
         information: './src/js/information.js',
+        //我的运动数据页面
+        sportsData: './src/js/sportsData.js',
+        //courseTraining课程训练页面
+        courseTraining: './src/js/courseTraining.js',
 
     },
 
@@ -147,7 +160,7 @@ module.exports = {
             //以哪个页面作为打包的页面模板--打包哪个页面
             template: './src/page/train.html',
             filename: 'train.html',
-            chunks: ['train', 'commonCSS', 'dom']
+            chunks: ['train', 'commonCSS', 'dom', 'utils']
         }),
         //userInfo.html
         new HtmlWebpackPlugin({
@@ -168,9 +181,22 @@ module.exports = {
             //以哪个页面作为打包的页面模板--打包哪个页面
             template: './src/page/information.html',
             filename: 'information.html',
-            chunks: ['information', 'commonCSS', 'dom', 'http', 'utils']
+            chunks: ['information', 'commonCSS', 'dom', 'http', 'utils', 'weui']
         }),
-
+        //sportsData.html
+        new HtmlWebpackPlugin({
+            //以哪个页面作为打包的页面模板--打包哪个页面
+            template: './src/page/sportsData.html',
+            filename: 'sportsData.html',
+            chunks: ['sportsData', 'commonCSS', 'dom', 'http', 'utils']
+        }),
+        //courseTraining.html
+        new HtmlWebpackPlugin({
+            //以哪个页面作为打包的页面模板--打包哪个页面
+            template: './src/page/courseTraining.html',
+            filename: 'courseTraining.html',
+            chunks: ['courseTraining', 'commonCSS', 'dom', 'http', 'utils']
+        }),
 
 
         new MiniCssExtractPlugin({
@@ -195,7 +221,7 @@ module.exports = {
         port: 8081, // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'userInfo.html', // 打开的页面
+        openPage: 'information.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
 
