@@ -14,40 +14,25 @@ document.ready(function () {
     let cityDom = document.querySelector('#city');
     let cityText = document.querySelector('#cityText');
     let arrow1Dom = document.querySelector('.arrow1');
-    let weuiTextareaInp = document.querySelector('.weui-textarea');
     //昵称input框
     let weuiInputDom = document.querySelector('.weui-input');
     let keepBtn = document.querySelector('.keep');
-    // let dataTextDom = document.querySelector('#dataText')
 
-
-    let user = JSON.parse(localStorage.getItem('user'))
-    let userData = null
-    $http.get('/users/accountinfo?userId=' + user.userId, function (res) {
-        userData = res.data
-        // console.log(userData);
-        weuiInputDom.value = userData.nickname;
-        weuiTextareaInp.value = userData.sign;
-        genderText.value = userData.gender;
-        dataText.textContent = userData.birthday;
-        provinceText.textContent = userData.address.split(",")[0];
-        cityText.textContent = userData.address.split(",")[1];
-    })
+    let
     // $http.get('/users/accountinfo?userId=' + user.userId, function (ev) {
     //     console.log(ev);
     //     userInfo.textContent = ev.data.nickname
     // })
     //全局默认数据
     //地区
-    // let data = {
-    //     nickname: '',
-    //     gender: '',
-    //     birthday: '',
-    //     pro: '',
-    //     city: '',
-    //     sign: weuiTextareaInp.value
-    // }
-
+    let data = {
+        nickname: '',
+        gender: '',
+        birthday: '',
+        pro: '',
+        city: '',
+        sign: ''
+    }
     //选择男女
     genderDom.addEventListener('click', function (ev) {
         weui.picker([{
@@ -107,7 +92,7 @@ document.ready(function () {
                     cityText.textContent = ''
 
 
-                    // console.log(result);
+                    console.log(result);
                     provinceText.textContent = result[0].label
                     // console.log(result[0].label);
                     // console.log(result);
@@ -150,7 +135,8 @@ document.ready(function () {
         location.href = './userInfo.html'
     })
 
-
+    let user = JSON.parse(localStorage.getItem('user'))
+    // console.log(user);
 
     function getUserInfo() {
         $http.get('/users/accountinfo?userId=' + user.userId, function (res) {
@@ -175,37 +161,13 @@ document.ready(function () {
     }
     getUserInfo()
     // console.log(data);
-    let data = {
-        nickname: '',
-        gender: genderText.value,
-        birthday: dataText.textContent,
-        address: null,
-        sign: weuiTextareaInp.value,
-        userId: user.userId
-    }
-    console.log(data);
-    keepBtn.addEventListener('click', function (ev) {
-        data.nickname = weuiInputDom.value
-        data.gender = genderText.value
-        data.birthday = dataText.textContent
-        data.sign = weuiTextareaInp.value
-        data.address = [provinceText.textContent, cityText.textContent]
 
+    keepBtn.addEventListener('click', function (ev) {
 
         // let xxx = JSON.stringify(localStorage.setItem('user',data))
         // console.log(xxx);
-        // let a = {
-        //     imgurl: "",
-        //     nickname: weuiInputDom.value,
-        //     gender: "女",
-        //     birthday: new Date(),
-        //     address: ["重庆", "渝北区"],
-        //     sign: "我是露露姐111",
-        //     userId: 1522
-        // }
-        $http.post("/users/userEdit", data, function (res) {
-            console.log(res);
-        })
+
+
 
 
     })

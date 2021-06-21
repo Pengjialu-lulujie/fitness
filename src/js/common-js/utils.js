@@ -15,7 +15,7 @@ const utils = {
     addFooter: function (page) {
         let footer = document.createElement('div');
         let body = document.querySelector('body');
-        footer.className = 'footer dpflex mt20'
+        footer.className = 'footer dpflex '
         let html = `
         <a href='./homePage.html'>
         <div class='${page==='homePage'?'active nav':'nav'}'>
@@ -62,5 +62,24 @@ const utils = {
         }, timer * 1000)
     }
 
+
+
+
+
+}
+/**
+ *@strToObj  将url上的数据转换为对象 
+ *@str   String  字符串： ?name=zhangsan&id=555
+ *@return  Object   {name:'zhangsan',id:555}
+ */
+utils.srtToObj = function (str) {
+    let obj = {}
+    str = str.substr(1); //name=zhangsan&id=555
+    let strArr = str.split('&'); // ['name=zhangsan','id=555'] 
+    strArr.forEach(function (item) {
+        let arr = item.split('='); // ['name','zhangsan']  ['id','555']
+        obj[arr[0]] = arr[1];
+    })
+    return obj;
 }
 window.utils = utils

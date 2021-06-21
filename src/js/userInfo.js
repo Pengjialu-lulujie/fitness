@@ -55,7 +55,7 @@ document.ready(function () {
             if (res.status == 0) {
                 //判断后台是否有值，有值就给页面渲染后台数据，没值就显示页面的默认数据
                 if (res.data.account) {
-                    uesrNameDom.textContent = res.data.account
+                    uesrNameDom.textContent = res.data.nickname
                 }
                 if (res.data.sign) {
                     autographDom.textContent = res.data.sign
@@ -101,21 +101,6 @@ document.ready(function () {
         fileBtnDom.click()
         ev.stopPropagation()
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //监听input的change事件
     // fileBtnDom.addEventListener('change', function (ev) {

@@ -31,6 +31,10 @@
     justify-content: space-between;
 }
 
+.alc {
+    align-items: center;
+}
+
 .justend {
     justify-content: flex-end;
 }
@@ -90,6 +94,9 @@
 
 .mb16 {
     margin-bottom: 16px;
+}
+.mb5 {
+    margin-bottom: 5px;
 }
 
 .ml12 {
@@ -161,6 +168,10 @@
     font-size: 80px;
 }
 
+.fw {
+    font-weight: bold;
+}
+
 /* 字体样式居中 */
 .tac {
     text-align: center;
@@ -228,6 +239,7 @@
 .bg15 {
     background-color: rgba(21, 146, 204, .7);
 }
-.bshoadow{
+
+.bshoadow {
     box-shadow: 5px 3px 3px #ccc;
 }

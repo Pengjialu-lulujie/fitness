@@ -9,18 +9,32 @@
 </head>
 
 <body class="dpflex flexcol">
-    <main class="dpflex flexcol">
-        <div class="pic">
-            <div class="picOrder">3/8</div>
-            <div class="courseName ">胯关节环绕</div>
+    <main class="dpflex flexcol flex1">
+        <div class="box">
+            <video class="pic" src=' http://139.9.177.51:8099/f/course/part2.mp4' muted autoplay></video>
+            <div class="picOrder">
+                <span class="current">3</span>/
+                <span class="all">8</span>
+                <div class="courseName ">胯关节环绕</div>
+            </div>
         </div>
-        <div class="picPlay dpflex justsb pd35">
-            <div class="iconfont iconxueyuan-shangyijie button"></div>
-            <div class="iconfont iconzanting stop"></div>
-            <div class="iconfont iconxueyuan-xiayijie button"></div>
+        <div class="picPlay dpflex justsb pd35 alc">
+            <!-- 进度条 -->
+            <div class="progress"></div>
+            <i class="iconfont iconxueyuan-shangyijie button pre"></i>
+            <i class="iconfont iconzanting stop"></i>
+            <i class="iconfont iconxueyuan-xiayijie button next"></i>
         </div>
     </main>
-
+    <!-- 蒙层 -->
+    <div class="modal fcf">
+        <div class="continue">继续播放</div>
+        <div class="end">停止播放</div>
+        <div class="video-item dpflex">
+            <div class="box_1"></div>
+            <div class="box_2"></div>
+        </div>
+    </div>
 </body>
 
 </html>

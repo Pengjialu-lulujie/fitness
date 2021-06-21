@@ -55,6 +55,8 @@ module.exports = {
         sportsData: './src/js/sportsData.js',
         //courseTraining课程训练页面
         courseTraining: './src/js/courseTraining.js',
+        //课程训练
+        kcxl: './src/js/kcxl.js',
 
     },
 
@@ -160,7 +162,7 @@ module.exports = {
             //以哪个页面作为打包的页面模板--打包哪个页面
             template: './src/page/train.html',
             filename: 'train.html',
-            chunks: ['train', 'commonCSS', 'dom', 'utils']
+            chunks: ['train', 'commonCSS', 'dom', 'utils', 'http']
         }),
         //userInfo.html
         new HtmlWebpackPlugin({
@@ -195,8 +197,16 @@ module.exports = {
             //以哪个页面作为打包的页面模板--打包哪个页面
             template: './src/page/courseTraining.html',
             filename: 'courseTraining.html',
-            chunks: ['courseTraining', 'commonCSS', 'dom', 'http', 'utils']
+            chunks: ['courseTraining', 'commonCSS', 'dom']
         }),
+        //课程训练
+        new HtmlWebpackPlugin({
+            //以哪个页面作为打包的页面模板--打包哪个页面
+            template: './src/page/kcxl.html',
+            filename: 'kcxl.html',
+            chunks: ['kcxl', 'commonCSS', 'dom', 'http', 'utils']
+        }),
+
 
 
         new MiniCssExtractPlugin({
@@ -221,7 +231,7 @@ module.exports = {
         port: 8081, // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'information.html', // 打开的页面
+        openPage: 'sportsData.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
 
