@@ -18,7 +18,7 @@ document.ready(function () {
     //昵称input框
     let weuiInputDom = document.querySelector('.weui-input');
     let keepBtn = document.querySelector('.keep');
-    // let dataTextDom = document.querySelector('#dataText')
+
 
 
     let user = JSON.parse(localStorage.getItem('user'))
@@ -39,14 +39,14 @@ document.ready(function () {
     // })
     //全局默认数据
     //地区
-    // let data = {
-    //     nickname: '',
-    //     gender: '',
-    //     birthday: '',
-    //     pro: '',
-    //     city: '',
-    //     sign: weuiTextareaInp.value
-    // }
+    let data = {
+        nickname: '',
+        gender: '',
+        birthday: '',
+        pro: '',
+        city: '',
+        sign: weuiTextareaInp.value
+    }
 
     //选择男女
     genderDom.addEventListener('click', function (ev) {
@@ -75,14 +75,14 @@ document.ready(function () {
         weui.datePicker({
             start: 1900,
             end: new Date().getFullYear(),
-            onChange: function (result) {
-                // console.log(result);
-            },
             onConfirm: function (result) {
                 // console.log(result);
-                dataText.textContent = result[0].value + '-' + result[1].value + '-' + result[2].value
-                data.birthday = dataText.textContent
+                // dataText.textContent =
+                // dataText.innerHTML = `
+                // ${result[0].value}-${utils.addZero(result[1].value)}-${utils.addZero(result[2].value)}
+                // `
                 // console.log(dataText.textContent);
+                // data.birthday = dataText.innerHTML
             },
             title: '多列选择器'
         });
@@ -105,8 +105,6 @@ document.ready(function () {
                 onConfirm: function (result) {
                     data.city = ''
                     cityText.textContent = ''
-
-
                     // console.log(result);
                     provinceText.textContent = result[0].label
                     // console.log(result[0].label);
@@ -151,7 +149,7 @@ document.ready(function () {
     })
 
 
-
+    //渲染
     function getUserInfo() {
         $http.get('/users/accountinfo?userId=' + user.userId, function (res) {
             // console.log(res);
@@ -164,10 +162,9 @@ document.ready(function () {
                 }
                 if (res.data.gender) {
                     genderText.textContent = res.data.gender
-                    data.gender = res.data.gender
                 }
                 if (res.data.birthday) {
-                    birthdayDom.textContent = res.data.birthday
+                    // birthdayDom.textContent = '2021-02-24'
                     data.birthday = res.data.birthday
                 }
             }
@@ -175,22 +172,17 @@ document.ready(function () {
     }
     getUserInfo()
     // console.log(data);
-    let data = {
-        nickname: '',
-        gender: genderText.value,
-        birthday: dataText.textContent,
-        address: null,
-        sign: weuiTextareaInp.value,
-        userId: user.userId
-    }
+
     console.log(data);
     keepBtn.addEventListener('click', function (ev) {
-        data.nickname = weuiInputDom.value
-        data.gender = genderText.value
-        data.birthday = dataText.textContent
-        data.sign = weuiTextareaInp.value
-        data.address = [provinceText.textContent, cityText.textContent]
-
+        let newData = {
+            nickname: weuiInputDom.value,
+            gender: genderText.textContent,
+            birthday: dataText.textContent,
+            address: [data.pro.label, data.city.label],
+            sign: weuiTextareaInp.value,
+            userId: user.userId
+        }
 
         // let xxx = JSON.stringify(localStorage.setItem('user',data))
         // console.log(xxx);
@@ -203,8 +195,10 @@ document.ready(function () {
         //     sign: "我是露露姐111",
         //     userId: 1522
         // }
-        $http.post("/users/userEdit", data, function (res) {
+        $http.post("/users/userEdit", newData, function (res) {
             console.log(res);
+            getUserInfo()
+            location.href = './userInfo.html'
         })
 
 

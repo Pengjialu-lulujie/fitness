@@ -66,7 +66,7 @@ document.ready(function () {
         let proWidth = (picDom.currentTime / picDom.duration) * 100
         proWidth = proWidth + '%'
         progressDom.style.width = proWidth
-    }, 1000)
+    }, 60)
 
 
 

@@ -10,7 +10,7 @@
 
 <body class="dpflex flexcol">
     <header id='header' class=" fcf pd20">
-        <span class="arrow1">
+        <span class="arrowReturn">
             ◀
         </span>
         <div class="title dpflex justsb">
@@ -38,11 +38,11 @@
         <div class="dpflex justsb">
             <div>
                 <div>消耗(千卡)</div>
-                <div>9999</div>
+                <div id="conDa">9999</div>
             </div>
             <div>
                 <div>累计(天)</div>
-                <div>9999</div>
+                <div id="num">9999</div>
             </div>
             <div>
                 <div>连续(天)</div>
@@ -50,6 +50,17 @@
             </div>
         </div>
     </header>
+    <div class="dpflex flex1 flexcol ovsc pd16">
+        <div>
+            <!-- 柱状图 -->
+            <div id="main" style="width: 90%;height:250px;" id="columnar"></div>
+        </div>
+        <div>
+            <!-- 饼状图 -->
+            <div id="pieChart" style="width: 90%;height:250px;" id="columnar"></div>
+        </div>
+    </div>
+
 </body>
 
 </html>

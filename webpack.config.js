@@ -56,7 +56,7 @@ module.exports = {
         //courseTraining课程训练页面
         courseTraining: './src/js/courseTraining.js',
         //课程训练
-        kcxl: './src/js/kcxl.js',
+        kcxl: './src/js/kcxl.js'
 
     },
 
@@ -220,7 +220,7 @@ module.exports = {
     //mode 环境
     //development 本地开发环境
     // production 线上生成环境
-    mode: "development",
+    mode: process.env.NODE_ENV,
 
 
 
@@ -231,7 +231,7 @@ module.exports = {
         port: 8081, // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'sportsData.html', // 打开的页面
+        openPage: 'home.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
 

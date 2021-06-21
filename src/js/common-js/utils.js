@@ -82,4 +82,20 @@ utils.srtToObj = function (str) {
     })
     return obj;
 }
+
+/**@addZero 添0补齐
+ * @num 数值
+ * @return
+ */
+utils.addZero = function (num) {
+    let str = num;
+    if (num < 10) {
+        str = '0' + str
+    }
+    return str;
+}
+
+
+
+
 window.utils = utils

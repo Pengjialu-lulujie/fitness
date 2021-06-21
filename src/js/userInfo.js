@@ -146,4 +146,12 @@ document.ready(function () {
         })
     }
 
+
+
+    //点击运动数据跳转
+    let sportsDom = document.querySelector('.sports');
+    console.log(sportsDom);
+    sportsDom.addEventListener('click', function (ev) {
+        location.href = './sportsData.html'
+    })
 })
